@@ -28,15 +28,19 @@ def shruthi(s):
     return ["F5#", "B5", "B4"]
 
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser()
-  parser.add_argument("-s", "--shruthi", help="yav pitch beku?", type=shruthi, default="C")
-  args = parser.parse_args()
+  try:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-s", "--shruthi", help="yav pitch beku?", type=shruthi, default="C")
+    args = parser.parse_args()
 
-  if args.shruthi:
-    pa, mel_sa, sa = args.shruthi
-    player = musicalbeeps.Player(volume=1, mute_output=False)
-    while True:
-      player.play_note(pa, 1);
-      player.play_note(mel_sa, .5);
-      player.play_note(mel_sa, .5);
-      player.play_note(sa, 1);
+    if args.shruthi:
+      pa, mel_sa, sa = args.shruthi
+      player = musicalbeeps.Player(volume=1, mute_output=False)
+      while True:
+        player.play_note(pa, 1);
+        player.play_note(mel_sa, .5);
+        player.play_note(mel_sa, .5);
+        player.play_note(sa, 1);
+  except KeyboardInterrupt:
+    print()
+    exit()
