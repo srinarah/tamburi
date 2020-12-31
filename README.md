@@ -1,3 +1,3 @@
 # tamburi
 Features:
-* Simple, no-nonsense G-pitch tamburi
+* Select shruthi via optional command line argument (default: C).
